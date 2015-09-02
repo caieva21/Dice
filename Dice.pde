@@ -1,28 +1,49 @@
+Die aaa = new Die(25,25); 
 void setup()
 {
-	noLoop();
+  size (500,500);  
+  background (255);
+  noLoop();
 }
 void draw()
 {
-	//your code here
+  fill (0);  
+  rect(25,25,100,100);
+  fill (255);
+  //noStroke();
+  ellipse (50,100,20,20);
+  ellipse (150,50,20,20);
 }
 void mousePressed()
 {
-	redraw();
+    redraw();
 }
 class Die //models one single dice cube
 {
-	//variable declarations here
-	Die(int x, int y) //constructor
-	{
-		//variable initializations here
-	}
-	void roll()
-	{
-		//your code here
-	}
-	void show()
-	{
-		//your code here
-	}
+    int diceX, diceY, diceNum, dotSize, dotX, dotY;
+    
+    Die(int x, int y) //constructor
+    {
+        diceX = x;
+        diceY = y;
+    }
+    void roll()
+    {
+        diceNum = (int)(Math.random()*6+1);
+    }
+    void show()
+    {
+        //your code here
+        fill (0);
+        rect (diceX,diceY,100,100);
+        fill (255);
+        if (diceNum == 1)
+        {
+         ellipse (diceX+50,diceY+50,20,20);
+        }
+        else if (diceNum == 2)
+        {
+          ellipse (1,1,1,1);
+        }
+    }
 }
