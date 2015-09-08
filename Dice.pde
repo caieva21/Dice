@@ -4,6 +4,7 @@ int three = 0;
 int four = 0;
 int five = 0;
 int six = 0;
+int totalnum = 0;
 
 void setup()
 {
@@ -21,10 +22,20 @@ void draw()
      aDice.show();
      }
    }
+   totalnum = one+(two*2)+(three*3)+(four*4)+(five*5)+(six*6);
    fill(0);
-   text("Number of Ones: "+ one, 25, 25);
-   text("Number of Twos: "+ two, 25, 40);
-   text("Number of Threes: "+ three, 25,55)
+   textSize(12);
+   textAlign(LEFT);
+   text("Number of Ones: "+ one, 25, 65);
+   text("Number of Twos: "+ two, 25, 80);
+   text("Number of Threes: "+ three, 25, 95);
+   text("Number of Fours: "+ four, 200, 65);
+   text("Number of Fives: "+ five, 200, 80);
+   text("Number of Sixes: "+ six, 200, 95);
+   text("Total: "+totalnum, 375, 80);
+   textSize(36);
+   textAlign (CENTER);
+   text("Die Die DICE", 250, 35);
 }
 
 class Die //models one single dice cube
